@@ -18,4 +18,14 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /**
+     * Check to see we see the title.
+     *
+     * @return void
+     */
+    public function testTitleTest()
+    {
+        $response = $this->get('/')->assertSee('The Bootstrap Blog');
+    }
 }
