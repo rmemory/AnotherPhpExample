@@ -27,14 +27,19 @@ class WelcomeAgainMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    // Any public property is available to the view, or we can pass the
+    // user using a ->with() method when we return the view in build
+    // below.
+    public $user;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
