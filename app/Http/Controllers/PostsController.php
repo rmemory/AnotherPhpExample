@@ -97,6 +97,8 @@ class PostsController extends Controller
             new Post(request(['title', 'body']))
         );
 
+        session()->flash('message', 'Your post has been published');
+
         // Redirect to home page
         return redirect()->home();
     }
